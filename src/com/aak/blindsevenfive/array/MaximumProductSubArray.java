@@ -7,7 +7,7 @@ public class MaximumProductSubArray {
     }
 
     public int maxProduct(int[] nums) {
-        int maxSum = nums[0];
+        int maxProduct = nums[0];
         int currentMax = nums[0];
         int currentMin = nums[0];
 
@@ -20,8 +20,8 @@ public class MaximumProductSubArray {
 
             currentMax = Math.max(nums[i], currentMax * nums[i]);
             currentMin = Math.min(nums[i], currentMin * nums[i]);
-            maxSum = Math.max(maxSum, currentMax);
+            maxProduct = Math.max(maxProduct, currentMax);
         }
-        return maxSum;
+        return maxProduct;
     }
 }
