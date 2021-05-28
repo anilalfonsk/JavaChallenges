@@ -11,6 +11,22 @@ public class ProductExceptSelf {
     }
 
     public int[] productExceptSelf(int[] nums) {
+        int[] response = new int[nums.length];
+        response[0] = 1;
+        int left = 1;
+        for(int i=1;i<nums.length;i++){
+            left = left * nums[i-1];
+            response[i] = left;
+        }
+        int right = 1;
+        for(int j=nums.length-2; j>=0; j--){
+            right = right * nums[j+1];
+            response[j] = response[j] * right;
+        }
+        return response;
+    }
+
+    public int[] productExceptSelfOld(int[] nums) {
 
         //Create a new respone array.
         int[] response = new int[nums.length];
